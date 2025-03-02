@@ -1,10 +1,11 @@
+
 # Simple Radius Server
 
-This is a simple Radius server configured to run on IP address `127.0.0.1` at port `1000` with the shared secret `nexus`.
+This is a simple Radius server implementing a subset of RFC-2865 configured to run on IP address `127.0.0.1` at port `1000` with the shared secret `nexus`.
 
 ## Configuration
 
-config.properties store the config properies.
+config.properties stores the config properties. The values can be configured
 - **IP Address:** 127.0.0.1
 - **Port:** 1000
 - **Shared Secret:** nexus
@@ -18,7 +19,7 @@ To start the Radius server, use the following command:
 java -cp .\radiusclient.jar se.nexus.interview.radius.packet.Main 127.0.0.1 1000 nexus
 ```
 
-Make sure you have `radiusclient.jar` in your classpath before running the command.
+Ensure you have `radiusclient.jar` in your classpath before running the command.
 
 
 ### Client Run
