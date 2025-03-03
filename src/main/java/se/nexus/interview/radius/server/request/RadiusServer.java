@@ -29,6 +29,12 @@ public class RadiusServer {
             while (isRunning) {
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 socket.receive(packet);
+                int receivedLength = packet.getLength();
+                 // Minimum RADIUS packet length is 20 bytes
+                if (receivedLength < Constants.MIN_PACKET_SIZE) {
+                    System.err.println("Received packet is too short: " + receivedLength + " bytes");
+                    continue; 
+                }
 
                 try {
                     PacketProcessorFactory.getProcessor(packet).process(packet);
