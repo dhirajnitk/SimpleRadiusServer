@@ -10,9 +10,9 @@ public class Constants {
     // Buffer size for reading and writing packets as per the RADIUS protocol.
     public static final int BUFFER_SIZE = 4096;
     public static final int MIN_PACKET_SIZE = 20;
+    public static final int THREAD_POOL_SIZE = 8;
     public static String FRAMED_IP_ADDRESS;
     public static String FRAMED_IP_NETMASK;
-
     // Static block to initialize the constants from the config file.
     static {
         initConstants();
